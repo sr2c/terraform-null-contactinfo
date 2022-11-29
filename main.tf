@@ -1,6 +1,6 @@
 locals {
   parts = [
-    var.freetext,
+    var.freetext == null ? "" : format("%s ", var.freetext),
     var.email == null ? "" : format("email:%s ", replace(var.email, "@", "[]")),
     var.url == null ? "" : "url:${var.url} ",
     var.proof == null ? "" : "proof:${var.proof} ",
@@ -33,9 +33,9 @@ locals {
     var.autoupdate == null ? "" : format("autoupdate:%s ", var.autoupdate ? "y" : "n"),
     var.confmgmt == null ? "" : "confmgmt:${var.confmgmt} ",
     var.dnslocation == null ? "" : "dnslocation:${var.dnslocation} ",
-    var.dnsqname == null ? "" : "dnsqname:${var.dnsqname} ",
-    var.dnssec == null ? "" : "dnssec:${var.dnssec} ",
-    var.dnslocalrootzone == null ? "" : "dnslocalrootzone:${var.dnslocalrootzone} ",
+    var.dnsqname == null ? "" : "dnsqname:${var.dnsqname ? "y" : "n"} ",
+    var.dnssec == null ? "" : "dnssec:${var.dnssec ? "y" : "n"} ",
+    var.dnslocalrootzone == null ? "" : "dnslocalrootzone:${var.dnslocalrootzone ? "y" : "n"} ",
   ]
   joined_parts = join("", local.parts)
 }

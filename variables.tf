@@ -25,6 +25,7 @@ variable "proof" {
 
 variable "pgp" {
   description = "40 characters PGP key fingerprint (long form) without leading 0x and without spaces. This key relates to the email address given in the email field, but providing the pgp field without an email field is also possible."
+  type = string
   default = null
 }
 
@@ -165,21 +166,25 @@ variable "confmgmt" {
 
 variable "dnslocation" {
   default = null
+  type = string
   description = "Exits only. Refer to specification."
 }
 
 variable "dnsqname" {
   default = null
   description = "Exits only. Refer to specification."
+  type = bool
 }
 
 variable "dnssec" {
   default = null
   description = "Refer to specification."
+  type = bool
 }
 
 variable "dnslocalrootzone" {
   default = null
   description = "Refer to specification."
+  type = bool
 }
 
