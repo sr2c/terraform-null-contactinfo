@@ -1,3 +1,13 @@
+variable "freetext" {
+  description = "Free text to be added at the start of the contact info string, typically containing a name of the operator or operator organisation."
+  default = ""
+  type = string
+  validation {
+    condition = length(regexall(":+", var.freetext)) == 0
+    error_message = "Free text cannot contain colons. Use the dedicated input if you are trying to use a field to ensure correct ordering of fields."
+  }
+}
+
 variable "email" {
   description = "This field contains the email address of the technical contact managing this Tor relay. The @ sign will be automatically substituted with []."
   default = null

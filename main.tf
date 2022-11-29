@@ -4,6 +4,7 @@ terraform {
 
 locals {
   parts = [
+    var.freetext,
     var.email == null ? "" : format("email:%s ", replace(var.email, "@", "[]")),
     var.url == null ? "" : "url:${var.url} ",
     var.proof == null ? "" : "proof:${var.proof} ",
