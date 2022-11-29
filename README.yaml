@@ -1,0 +1,34 @@
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-null-contactinfo
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "BSD2"
+
+# Canonical GitHub repo
+gitlab_repo: sr2c/terraform-null-contactinfo
+
+# Short description of this project
+description: |-
+  ContactInfo information sharing scheme
+
+# Other files to include in this README from the project folder
+include:
+- "docs/terraform.md"
+- "docs/targets.md"
+
+# Contributors to this project
+contributors:
+- name: "irl"
+  gitlab: "irlxyz"
+  gitlab_id: 5895869
+- name: "Owen"
+  gitlab: "sr2owen"
+  gitlab_id: 13017971
